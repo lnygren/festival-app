@@ -1,0 +1,54 @@
+<div className="flex-1 flex items-center justify-end">
+                    <NavLink
+                      className="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200"
+                      end
+                      to="/"
+                    >
+                      Home
+                    </NavLink>
+                  <NavLink
+                      className="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200"
+                      end
+                      to="/lineup"
+                    >
+                      Lineups
+                    </NavLink>
+                    <div class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200 group">
+                      <span>Tickets 1</span>
+                      <div class="group-hover:block hidden absolute top-full bg-pink-500 right-0 whitespace-nowrap rounded-b-md text-right">
+                          <div class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200">
+                              <span>Single day ticket</span>
+                          </div>
+                          <div class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200">
+                              <span>7 day ticket</span>
+                          </div>
+
+                      </div>
+                  </div>
+                    <div className='group'>
+                          <NavLink
+                            className=" p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200"
+                            end
+                            to="/tickets"
+                          >
+                            Tickets
+                          </NavLink>
+                        
+                        
+                        <div className="group-hover:block hidden absolute top-full bg-pink-500 right-0 whitespace-nowrap rounded-b-md text-right">
+                            <div className="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200">
+                                <span>Single day ticket</span>
+                            </div>
+                            <div className="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200">
+                                <span>7 day ticket</span>
+                            </div>
+                          
+                        </div>
+                    </div>
+                <NavLink
+                  className="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200"
+                  end
+                  to="/support"
+                >
+                  Support
+                </NavLink>
