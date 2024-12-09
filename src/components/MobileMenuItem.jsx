@@ -13,8 +13,6 @@ export default function MobileMenuItem({ label, link, classes = "", subItems }) 
     classes +
     " relative flex h-full cursor-pointer items-center justify-center p-4 font-bold hover:text zinc-200 transition-colors hover:bg-white/10";
 
-    console.log("Sub items: " + subItems);
-
     if(subItems) {
         let classesSub = "group relative h-full cursor-pointer  p-4 hover:text zinc-200 transition-colors hover:bg-white/10";
 
@@ -44,9 +42,9 @@ export default function MobileMenuItem({ label, link, classes = "", subItems }) 
         return (
             <div id="ticket-menu-item" className={classesSub} onClick={setOpen}>
                 <div className="p-4 text-center font-bold">Tickets</div>
-                <div class="hidden group-open:block">
-                    <div class="text-center p-4 relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transition-colors ease-in-out">Single day ticket</div>
-                    <div class="text-center p-4 relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transition-colors ease-in-out">4-day pass</div>
+                <div className="hidden group-open:block">
+                    <div className="text-center p-4 relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transition-colors ease-in-out">Single day ticket</div>
+                    <div className="text-center p-4 relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transition-colors ease-in-out">4-day pass</div>
                 </div>
 
             </div>

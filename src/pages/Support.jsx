@@ -15,7 +15,7 @@ export default function Support() {
     const [nameColumnFilter, setNameColumnFilter] = useState([
         {
           id: 'name',
-          value: 'labor'
+          value: ''
         }
     ]);
 
