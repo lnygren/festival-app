@@ -3,5 +3,12 @@
     "next": "Next",
     "home" : "Home test",
     "age" : "Age (year)",
-    "name" : "Name"
+    "name" : "Name",
+    "tickets" : "Tickets",
+    "support" : "Support",
+    "lineup" : "Lineup",
+    "oneday" : "One day ticket",
+    "week" : "4 day pass", 
+    "program" : "Program",
+    "getthere" : "How to get there"
   }

@@ -11,6 +11,9 @@ import Tickets from './pages/Tickets';
 import Support from './pages/Support';
 import Week from './pages/Week';
 import Oneday from './pages/Oneday';
+import Getthere from './pages/Getthere';
+
+import { loader as commentsLoader } from './pages/Support';
 
 const router = createBrowserRouter ([
   {
@@ -41,9 +44,16 @@ const router = createBrowserRouter ([
           ]
         },
         {
+          path: 'getthere', children: [
+            {
+              index: true, element: <Getthere />
+            },
+          ]
+        },
+        {
           path: 'support', children: [
             {
-              index: true, element: <Support />
+              index: true, element: <Support />, loader: commentsLoader
             },
           ]
         },

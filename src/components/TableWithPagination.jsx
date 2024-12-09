@@ -5,38 +5,72 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
+  getFilteredRowModel
 } from "@tanstack/react-table";
 
 
-const TableWithPagination = ({ data, columns }) => {
+const TableWithPagination = ({ data, columns, classes = '', pageSize, columnFilters = []}) => {
   const [sorting, setSorting] = useState([]);
+  
+  console.log("pageSize: " + pageSize);
   const [pagination, setPagination] = useState({
     pageIndex: 0,
-    pageSize: 5,
+    pageSize: pageSize,
   });
+
+
+  // const [columnFilters, setColumnFilters] = React.useState([]);
+
+  let classesNames = "p-4 bg-gray-100 rounded shadow-md " + classes;
 
   // Opprett tabellinstansen
   const table = useReactTable({
     data,
     columns,
+    pageSize,
     state: {
       sorting,
       pagination,
+      columnFilters,
+    },
+    initialState: {
+
+      columnFilters: [
+          {
+            id: 'name',
+            value: 'labor'
+          }
+      ]
     },
     onSortingChange: setSorting,
     onPaginationChange: setPagination,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
   });
 
+  /*function setFilter() {
+    setColumnFilters([
+      {
+        id: 'name',
+        value: ref.current.value
+      }
+  ]);
+  }*/
+ 
+
+  console.log('Column filters: ' + table.getState().columnFilters)
+
   return (
-    <div className="p-4 bg-gray-100 rounded shadow-md w-1/2">
+    <div className={classesNames}>
+
     <table className="table-auto w-full border-collapse border border-gray-300">
       <thead>
         {table.getHeaderGroups().map(headerGroup => (
           <tr key={headerGroup.id} className="bg-gray-200">
             {headerGroup.headers.map(header => (
+              
               <th
                 key={header.id}
                 onClick={header.column.getToggleSortingHandler()}
@@ -47,6 +81,7 @@ const TableWithPagination = ({ data, columns }) => {
                   header.column.columnDef.header,
                   header.getContext()
                 )}
+                
                 {{
                   asc: " 🔼",
                   desc: " 🔽",
@@ -68,6 +103,7 @@ const TableWithPagination = ({ data, columns }) => {
                 className="px-4 py-2 border-t border-gray-300 text-gray-700"
               >
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
+               
               </td>
             ))}
           </tr>

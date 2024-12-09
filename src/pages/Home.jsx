@@ -35,7 +35,7 @@ export default function Home() {
         <div className="text-2xl text-slate-500">{t('home')}</div>
       
         <div>
-            <TableWithPagination data={data} columns={columns} />
+            <TableWithPagination data={data} columns={columns} classes="md:w-1/2 w-full"/>
         </div>
     </div>;
 

@@ -3,5 +3,13 @@
     "next": "Neste",
     "home" : "Hjemme",
     "age" : "Alder (år)",
-    "name" : "Navn"
+    "name" : "Navn",
+    "tickets" : "Billetter",
+    "support" : "Brukerstøtte",
+    "lineup" : "Band",
+    "oneday" : "En-dags billett",
+    "week" : "4-dagers pass", 
+    "program" : "Program",
+    "getthere" : "Transport"
+
   }
