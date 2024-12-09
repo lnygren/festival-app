@@ -31,9 +31,6 @@ const router = createBrowserRouter ([
             {
               path: 'week', element: <Week />
             },
-            /*{
-              path: ':eventId/edit', element: <EditEvent />
-            },*/
           ]
         },
         {
@@ -41,15 +38,6 @@ const router = createBrowserRouter ([
             {
               index: true, element: <Lineup />
             },
-            /*{
-              path: ':eventId', element: <EventDetail />
-            },
-            {
-              path: 'new', element: <NewEvent />
-            },
-            {
-              path: ':eventId/edit', element: <EditEvent />
-            },*/
           ]
         },
         {
@@ -57,15 +45,6 @@ const router = createBrowserRouter ([
             {
               index: true, element: <Support />
             },
-            /*{
-              path: ':eventId', element: <EventDetail />
-            },
-            {
-              path: 'new', element: <NewEvent />
-            },
-            {
-              path: ':eventId/edit', element: <EditEvent />
-            },*/
           ]
         },
       ]
