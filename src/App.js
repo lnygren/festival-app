@@ -13,6 +13,7 @@ import Week from './pages/Week';
 import Oneday from './pages/Oneday';
 import Getthere from './pages/Getthere';
 import BandPage from './pages/Band';
+import { Auth0Provider } from '@auth0/auth0-react';
 
 import { loader as commentsLoader } from './pages/Support';
 
@@ -68,7 +69,17 @@ const router = createBrowserRouter ([
 
 
 function App() {
-  return <RouterProvider router={router}/>;
+  return (
+    <Auth0Provider
+    domain="dev-i0q8gya6f645slv1.eu.auth0.com"
+    clientId="A0vfnZdjpXPunkEghuBUazgJhCyPsR6W"
+    authorizationParams={{
+      redirect_uri: window.location.origin
+    }}
+  >
+  <RouterProvider router={router}/>
+  </Auth0Provider>
+  );
 }
 
 export default App;

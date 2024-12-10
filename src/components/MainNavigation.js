@@ -13,10 +13,15 @@ import Hero from './Hero';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import LoginButton from './LoginButton';
 
+
+import { useAuth0 } from '@auth0/auth0-react';
 
 function MainNavigation({showHero = true, toggleDarkMode}) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { user, isAuthenticated } = useAuth0();
 
 
 
@@ -60,6 +65,8 @@ function MainNavigation({showHero = true, toggleDarkMode}) {
                 <MenuItem link="/getthere" label={t('getthere')}  />
               <MenuItem link="/support" label={t('support')}  />
               <LanguageSwitcher />
+              {!isAuthenticated && <LoginButton>Login</LoginButton>}
+              {isAuthenticated && JSON.stringify(user.name)}
           </div>
           <div className="md:hidden block ml-auto pr-4 my-auto cursor-pointer">
                <button id="mobile-menu-button" className={isOpen ? 'group open peer' : 'group peer'} onClick={setOpen}>
