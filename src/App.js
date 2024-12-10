@@ -12,6 +12,7 @@ import Support from './pages/Support';
 import Week from './pages/Week';
 import Oneday from './pages/Oneday';
 import Getthere from './pages/Getthere';
+import BandPage from './pages/Band';
 
 import { loader as commentsLoader } from './pages/Support';
 
@@ -37,9 +38,12 @@ const router = createBrowserRouter ([
           ]
         },
         {
-          path: 'lineup', children: [
+          path: 'lineup',children: [
             {
               index: true, element: <Lineup />
+            },
+            {
+              path: ':bandId', element: <BandPage />
             },
           ]
         },

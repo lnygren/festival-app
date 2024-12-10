@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "selector",
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -21,5 +22,7 @@ module.exports = {
   plugins: [
     require("./plugins/openVariant"),
     require("./plugins/animationDelay"),
+    require("./plugins/tableCaption"),
+    require("./plugins/buttonPlugin"),
   ],
 };
