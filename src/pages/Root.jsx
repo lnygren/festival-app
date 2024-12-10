@@ -29,7 +29,7 @@ function RootLayout() {
     return (
         <>
             <MainNavigation toggleDarkMode={toggleDarkMode}/>
-            <main className="bg-zinc-200 dark:bg-zinc-900">
+            <main className="bg-zinc-200 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-200">
                 {/*navigation.state === 'loading' && <p>Loading....</p>*/}
                 <Outlet />
             </main>

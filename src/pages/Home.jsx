@@ -27,7 +27,7 @@ export default function Home() {
     }
 
     return <>
-       <div className="max-w-screen-lg pt-8 mx-auto text-zinc-900 dark:text-zinc-200">
+       <div className="max-w-screen-lg pt-8 mx-auto ">
             <h2 className="mb-5">
                 <span className="text-transparent bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text">Headliners</span>
             </h2>

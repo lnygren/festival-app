@@ -9,6 +9,8 @@ import { I18nextProvider } from 'react-i18next';
 import translationEN from './locales/en/translation.json';
 import translationNO from './locales/no/translation.json';
 
+
+
 i18n.init({
   resources: {
     en: { translation: translationEN },

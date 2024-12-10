@@ -29,9 +29,14 @@ export default function Tickets() {
                 <caption class="caption-bottom">Once they're gone they're gone!</caption>
 
             </table>
-            <div class="btn bg-rose-500">
+           
+
+            <section className="rounded-tl-full rounded-br-full flex flex-col items-center justify-center px-10 py-40 bg-gradient-to-br from-cyan-500 to-rose-500">
+            <div class="btn bg-[#000] text-zinc-200">
                 Some button
             </div>
+
+            </section>
         </div>
     </>;
 
