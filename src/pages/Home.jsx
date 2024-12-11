@@ -48,7 +48,6 @@ export default function Home() {
                 <div onClick={scrollLeft} id="previous" className="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-8"><FontAwesomeIcon icon={faAngleRight} /></div>
             </div>
 
-            <p>
             <h3 className="mt-10  mb-5">Overview</h3>
 Harmony Haven Festival is a three-day celebration of music, art, and nature, set against the breathtaking backdrop of Emerald Bay. This eco-conscious festival brings together world-class musicians, emerging artists, and nature lovers for an unforgettable weekend of immersive experiences.
 
@@ -93,7 +92,7 @@ Website: harmonyhavenfest.com
 Social Media: Follow us @HarmonyHavenFest for updates!
 
 
-            </p>
+         
             
         </div>
     </>;

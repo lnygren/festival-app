@@ -14,19 +14,37 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import LoginButton from './LoginButton';
-
+import {redirectToLogin, logout, getUserInfo} from "../utils/login";
 
 import { useAuth0 } from '@auth0/auth0-react';
+
+import { useSelector } from 'react-redux';
+import UserInfo from './UserInfo';
 
 function MainNavigation({showHero = true, toggleDarkMode}) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const authenticated = useSelector(state => state.authentication.authenticated); 
+
+  console.log('authenticated ' + authenticated);
+
+
   const { user, isAuthenticated } = useAuth0();
 
 
+  const userInfo = getUserInfo();
 
   function setOpen() {
     setIsOpen(!isOpen);
+  }
+
+
+  function handleLogin() {
+    redirectToLogin();
+  }
+
+  function handleLogout() {
+    logout();
   }
 
 
@@ -40,8 +58,8 @@ function MainNavigation({showHero = true, toggleDarkMode}) {
   
     <header className="text-zinc-200">
       <button id="dark-mode-toggle " className="z-10 fixed top-24 right-0 inline-block w-12 curso-pointer rounded-l-lg bg-zinc-900 dark:bg-zinc-200 text-zinc-200 dark:text-zinc-900 p-2 text-3xl">
-        <FontAwesomeIcon onClick={toggleDarkMode} icon={faSun} class="dark:hidden" />
-        <FontAwesomeIcon onClick={toggleDarkMode} icon={faMoon} class="hidden dark:inline" />
+        <FontAwesomeIcon onClick={toggleDarkMode} icon={faSun} className="dark:hidden" />
+        <FontAwesomeIcon onClick={toggleDarkMode} icon={faMoon} className="hidden dark:inline" />
       </button>
 
       <nav className="z-50 sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-500">
@@ -65,8 +83,9 @@ function MainNavigation({showHero = true, toggleDarkMode}) {
                 <MenuItem link="/getthere" label={t('getthere')}  />
               <MenuItem link="/support" label={t('support')}  />
               <LanguageSwitcher />
-              {!isAuthenticated && <LoginButton>Login</LoginButton>}
-              {isAuthenticated && JSON.stringify(user.name)}
+              {!authenticated && <button className="btn ml-1" onClick={handleLogin}>Logg inn</button>/*<LoginButton>Login</LoginButton>*/}
+              {authenticated && <button className="btn" onClick={handleLogout}>Logg ut</button>/*<LoginButton>Login</LoginButton>*/}
+              {authenticated && <UserInfo userInfo={userInfo} />}
           </div>
           <div className="md:hidden block ml-auto pr-4 my-auto cursor-pointer">
                <button id="mobile-menu-button" className={isOpen ? 'group open peer' : 'group peer'} onClick={setOpen}>

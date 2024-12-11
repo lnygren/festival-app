@@ -1,0 +1,4 @@
+export const SET_AUTHENTICATED = "SET_AUTHENTICATED";
+
+
+

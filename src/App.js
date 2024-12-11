@@ -16,6 +16,13 @@ import BandPage from './pages/Band';
 import { Auth0Provider } from '@auth0/auth0-react';
 
 import { loader as commentsLoader } from './pages/Support';
+import CallBackPage from './pages/Callback';
+
+import { configureStore } from "@reduxjs/toolkit";
+import rootReducer from "./store/rootReducer";
+import {Provider} from "react-redux";
+
+import store from './store/store'
 
 const router = createBrowserRouter ([
   {
@@ -24,6 +31,9 @@ const router = createBrowserRouter ([
       children: [
         {
           index: true, element: <Home />
+        },
+        {
+          path: 'callback' , element: <CallBackPage />
         },
         {
           path: 'tickets' , children: [
@@ -71,13 +81,17 @@ const router = createBrowserRouter ([
 function App() {
   return (
     <Auth0Provider
-    domain="dev-i0q8gya6f645slv1.eu.auth0.com"
-    clientId="A0vfnZdjpXPunkEghuBUazgJhCyPsR6W"
-    authorizationParams={{
-      redirect_uri: window.location.origin
+        domain="dev-i0q8gya6f645slv1.eu.auth0.com"
+        clientId="A0vfnZdjpXPunkEghuBUazgJhCyPsR6W"
+        authorizationParams={{
+        redirect_uri: window.location.origin
     }}
   >
-  <RouterProvider router={router}/>
+    <Provider store={store}>
+      <RouterProvider router={router}/>
+
+    </Provider>
+ 
   </Auth0Provider>
   );
 }
