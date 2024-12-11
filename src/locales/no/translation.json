@@ -10,6 +10,7 @@
     "oneday" : "En-dags billett",
     "week" : "4-dagers pass", 
     "program" : "Program",
-    "getthere" : "Transport"
+    "getthere" : "Transport",
+    "admin" :"Administrasjon"
 
   }

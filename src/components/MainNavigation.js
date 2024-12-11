@@ -13,7 +13,7 @@ import Hero from './Hero';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
-import LoginButton from './LoginButton';
+/*import LoginButton from './LoginButton';*/
 import {redirectToLogin, logout, getUserInfo} from "../utils/login";
 
 import { useAuth0 } from '@auth0/auth0-react';
@@ -27,10 +27,7 @@ function MainNavigation({showHero = true, toggleDarkMode}) {
   const authenticated = useSelector(state => state.authentication.authenticated); 
 
   console.log('authenticated ' + authenticated);
-
-
-  const { user, isAuthenticated } = useAuth0();
-
+  //const { user, isAuthenticated } = useAuth0();
 
   const userInfo = getUserInfo();
 
@@ -75,6 +72,8 @@ function MainNavigation({showHero = true, toggleDarkMode}) {
             </div>
           </NavLink>
           <div className="md:flex hidden flex-1 items-center justify-end">
+
+                <MenuItem link="/admin" label={t('admin')}  />
 
                 <MenuItem link="/lineup" label={t('lineup')}  />
                 

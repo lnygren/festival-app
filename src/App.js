@@ -17,9 +17,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 
 import { loader as commentsLoader } from './pages/Support';
 import CallBackPage from './pages/Callback';
-
-import { configureStore } from "@reduxjs/toolkit";
-import rootReducer from "./store/rootReducer";
+import Admin from './pages/Admin';
 import {Provider} from "react-redux";
 
 import store from './store/store'
@@ -34,6 +32,9 @@ const router = createBrowserRouter ([
         },
         {
           path: 'callback' , element: <CallBackPage />
+        },
+        {
+          path: 'admin' , element: <Admin />
         },
         {
           path: 'tickets' , children: [
